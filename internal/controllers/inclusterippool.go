@@ -56,7 +56,7 @@ type InClusterIPPoolReconciler struct {
 }
 
 // SetupWithManager sets up the controller with the Manager.
-func (r *InClusterIPPoolReconciler) SetupWithManager(ctx context.Context, mgr ctrl.Manager) error {
+func (r *InClusterIPPoolReconciler) SetupWithManager(_ context.Context, mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
 		For(&v1alpha2.InClusterIPPool{}).
 		Watches(&source.Kind{Type: &ipamv1.IPAddress{}},
@@ -91,7 +91,7 @@ type GlobalInClusterIPPoolReconciler struct {
 }
 
 // SetupWithManager sets up the controller with the Manager.
-func (r *GlobalInClusterIPPoolReconciler) SetupWithManager(ctx context.Context, mgr ctrl.Manager) error {
+func (r *GlobalInClusterIPPoolReconciler) SetupWithManager(_ context.Context, mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
 		For(&v1alpha2.GlobalInClusterIPPool{}).
 		Watches(&source.Kind{Type: &ipamv1.IPAddress{}},

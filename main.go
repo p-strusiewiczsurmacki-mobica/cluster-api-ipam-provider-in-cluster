@@ -38,7 +38,7 @@ import (
 	"sigs.k8s.io/cluster-api-ipam-provider-in-cluster/internal/controllers"
 	"sigs.k8s.io/cluster-api-ipam-provider-in-cluster/internal/index"
 	"sigs.k8s.io/cluster-api-ipam-provider-in-cluster/internal/webhooks"
-	"github.com/telekom/cluster-api-ipam-provider-in-cluster/pkg/ipamutil"
+	"sigs.k8s.io/cluster-api-ipam-provider-in-cluster/pkg/ipamutil"
 )
 
 var (
@@ -102,7 +102,7 @@ func main() {
 		Client:           mgr.GetClient(),
 		Scheme:           mgr.GetScheme(),
 		WatchFilterValue: watchFilter,
-		Provider: &controllers.InClusterProviderIntegration{
+		Provider: &controllers.InClusterProviderAdapter{
 			Client:           mgr.GetClient(),
 			WatchFilterValue: watchFilter,
 		},

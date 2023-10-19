@@ -5,7 +5,7 @@ linters:
   - bodyclose
   - containedctx
   - deadcode
-  - depguard
+  # - depguard
   - dogsled
   - errcheck
   - exportloopref

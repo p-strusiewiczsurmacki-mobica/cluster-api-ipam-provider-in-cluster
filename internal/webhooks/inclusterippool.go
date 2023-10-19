@@ -74,7 +74,7 @@ var _ webhook.CustomDefaulter = &InClusterIPPool{}
 var _ webhook.CustomValidator = &InClusterIPPool{}
 
 // Default satisfies the defaulting webhook interface.
-func (webhook *InClusterIPPool) Default(_ context.Context, obj runtime.Object) error {
+func (webhook *InClusterIPPool) Default(_ context.Context, _ runtime.Object) error {
 	return nil
 }
 
